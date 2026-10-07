@@ -1,8 +1,19 @@
 package com.exemplo.forgeraven3d.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "impressoes")
 public class Impressao {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String nome;
     private String material;
     private String cor;
@@ -11,17 +22,6 @@ public class Impressao {
     private String status;
 
     public Impressao() {
-    }
-
-    public Impressao(Long id, String nome, String material, String cor,
-                     Double pesoGramas, Integer tempoMinutos, String status) {
-        this.id = id;
-        this.nome = nome;
-        this.material = material;
-        this.cor = cor;
-        this.pesoGramas = pesoGramas;
-        this.tempoMinutos = tempoMinutos;
-        this.status = status;
     }
 
     public Long getId() { return id; }
